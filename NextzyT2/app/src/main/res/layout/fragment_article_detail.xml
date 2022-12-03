@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="article"
+            type="com.parinya.nextzyt2.domain.model.Article" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".presentation.article_detail.ArticleDetailFragment">
+
+            <ImageView
+                hideEmptyData="@{article.urlToImage}"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                imageUrl="@{article.urlToImage}"/>
+
+            <TextView
+                hideEmptyData="@{article.title}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="@{article.title}"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                hideEmptyData="@{article.author}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text='@{"Author : " + article.author}' />
+
+            <TextView
+                hideEmptyData="@{article.publishedAt}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                textDateTime="@{article.publishedAt}"/>
+
+            <TextView
+                hideEmptyData="@{article.description}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="@{article.description}"/>
+
+            <TextView
+                hideEmptyData="@{article.source.name + article.url}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text='@{article.source.name + " : " + article.url}' />
+
+            <com.google.android.material.divider.MaterialDivider
+                hideEmptyData="@{article.content}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                hideEmptyData="@{article.content}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="@{article.content}"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+</layout>

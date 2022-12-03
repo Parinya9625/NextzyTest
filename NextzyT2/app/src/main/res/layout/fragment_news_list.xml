@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".presentation.news_list.NewsListFragment">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.parinya.nextzyt2.presentation.news_list.NewsListViewModel" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            isVisible="@{viewModel.state.loading}"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            isVisible="@{viewModel.state.error}"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@{viewModel.state.errorMessage}"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:padding="16dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/newsRecycleView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            items="@{viewModel.state.news.articles}"
+            tools:listitem="@layout/article_list_tile"/>
+
+    </LinearLayout>
+</layout>

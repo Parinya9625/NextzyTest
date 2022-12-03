@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">NextzyT2</string>
+    <string name="my_github">Github : Parinya9625</string>
+    <string name="my_education">Education : Computer science at Bangkok University</string>
+    <string name="my_number">Phone number : 093 583 7110</string>
+    <string name="my_email">Email : parinya.wongm@bumail.net</string>
+    <string name="my_nickname">Nickname : Bes</string>
+    <string name="my_name">Name : Parinya Wongmanee</string>
+    <string name="menu_contact_us">Contact us</string>
+</resources>
